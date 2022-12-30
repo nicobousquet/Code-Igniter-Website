@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3.org/1999/html" , lang="en">
 <head>
 	<meta charset="UTF-8">
+	<title><?php echo $continent ?></title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<style>
 		.flex_container {

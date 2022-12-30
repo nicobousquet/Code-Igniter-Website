@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class GetPoster extends CI_Controller
+class PaymentCancel extends CI_Controller
 {
 	public function __construct()
 	{
@@ -15,11 +15,9 @@ class GetPoster extends CI_Controller
 			$this->session->password = true;
 		}
 	}
-
-	public function index($continent = 'Africa')
-	{
-		$data = array('photos' => $this->PhotosModel->select_photos_by_continent($continent), 'continent' => $continent);
+	public function index() {
+		$data["actual_request"] = $this->input->post('cartID');
 		$this->load->view('navbar', $data);
-		$this->load->view('getposter', $data);
+		$this->load->view('paymentcancel.php', $data);
 	}
 }

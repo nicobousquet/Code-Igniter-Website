@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3.org/1999/html" lang="en">
 <head>
 	<meta charset="UTF-8">
+	<link rel="icon" href="<?=base_url()?>/favicon.ico" type="image/gif">
 	<style>
 		input[type=text], input[type=email], input[type=password], select {
 			padding: 6px 8px;
@@ -77,6 +78,8 @@
 			padding: 6px;
 			border-radius: 0 0 5px 5px;
 			box-shadow: 2px 5px 10px 0 rgb(0 0 0 / 15%);
+			display: flex;
+			flex-direction: column;
 		}
 
 		.showhim:hover .showme {
@@ -98,7 +101,7 @@
 	<li><a href="<?php echo site_url('GetPoster/index/America'); ?>"><span>America</span></a></li>
 	<li><a href="<?php echo site_url('GetPoster/index/Africa'); ?>"><span>Africa</span></a></li>
 	<li><a href="<?php echo site_url('GetPoster/index/Oceania'); ?>"><span>Oceania</span></a></li>
-	<li class="nav_right"><a href="<?php echo site_url('MyKart'); ?>"><span>My kart</span></a></li>
+	<li class="nav_right"><a href="<?php echo site_url('MyCart'); ?>"><span>My cart</span></a></li>
 	<?php if (!$_SESSION['login']) { ?>
 		<li class="showhim nav_right"><span>My account</span>
 			<div class="showme">
@@ -127,6 +130,13 @@
 	<?php } else { ?>
 		<li class="showhim nav_right"><span><?php echo $_SESSION['login']; ?></span>
 			<div class="showme">
+				<div>
+					<form method="post" action="<?php echo site_url('MyOrders'); ?>">
+						<div class="button_div" style="margin: 2px">
+							<input type="submit" name="myorders" value="My orders">
+						</div>
+					</form>
+				</div>
 				<div>
 					<form method="post" action="<?php echo site_url('Navbar/disconnect_user'); ?>">
 						<div class="button_div" style="margin: 2px">

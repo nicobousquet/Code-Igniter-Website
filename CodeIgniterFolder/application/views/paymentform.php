@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/html" , lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>My account</title>
+	<title>Payment</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<style>
-		input[type=text], input[type=email], input[type=password], select {
+		input[type=text], input[type=email], input[type=password], input[type=number], select {
 			padding: 6px 8px;
-			margin: 15px 10px 0 0;
+			margin: 10px;
 			display: inline-block;
 			border: 1px solid #ccc;
 			border-radius: 4px;
@@ -53,6 +53,12 @@
 			justify-content: center;
 		}
 
+		.column {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+
 		.form_box {
 			background-color: #f8f8f8;
 			align-self: center;
@@ -84,45 +90,26 @@
 </head>
 
 <body>
-<script>
-	var match_password = function () {
-		if (document.getElementById('password').value == document.getElementById('confirm').value) {
-			document.getElementById('message').style.color = 'green';
-			document.getElementById('message').innerHTML = 'matching';
-			document.getElementById('submit').disabled = false;
-		} else {
-			document.getElementById('message').style.color = 'red';
-			document.getElementById('message').innerHTML = 'not matching';
-			document.getElementById('submit').disabled = true;
-		}
-	}
-</script>
-
 <div class="form_box">
-	<form method="post" class="font form" action="<?php echo site_url('MyAccount/add_new_user'); ?>">
+	<form method="post" class="font form" action="<?php echo site_url('CallUMAPal'); ?>">
 		<div class="title">
-			Create your account
+			Add your shipment address
 		</div>
 		<div class="line">
 			<input type="text" id="fname" name="fname" placeholder="First name" pattern="[A-Za-z]+" required><br>
 			<input type="text" id="lname" name="lname" placeholder="Last name" pattern="[A-Za-z]+" required><br>
 		</div>
-		<div class="line">
-			<input type="email" id="email" name="email" placeholder="Email address"
-				   pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" required><br><br>
+		<div class="column">
+			<input style="width: 95%;" type="text" name="address" placeholder="Address" required>
+			<input style="width: 95%;" type="text" name="appartment" placeholder="Appartment" required>
 		</div>
 		<div class="line">
-			<input type="password" id="password" name="password" placeholder="Password" onkeyup='match_password();'
-				   pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8, 16}" required><br>
-			<input type="password" id="confirm" name="confirm" placeholder="Confirm password"
-				   onkeyup='match_password();' pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8, 16}" required><br>
-			<span id='message'></span>
+			<input type="number" name="postal_code" placeholder="Postal code" required>
+			<input type="text" name="city" placeholder="City" required>
+			<input type="text" name="country" placeholder="Country" required>
 		</div>
-		<div style="display: flex; flex-direction: column; color: red">
+		<div>
 			<input id="submit" type="submit" value="Submit">
-			<?php if (isset($email_used) && $email_used) {
-				echo "Email used by another user";
-			} ?>
 		</div>
 	</form>
 </div>

@@ -1,7 +1,6 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-
-class GetPoster extends CI_Controller
+class CallUMAPal extends CI_Controller
 {
 	public function __construct()
 	{
@@ -15,11 +14,10 @@ class GetPoster extends CI_Controller
 			$this->session->password = true;
 		}
 	}
-
-	public function index($continent = 'Africa')
-	{
-		$data = array('photos' => $this->PhotosModel->select_photos_by_continent($continent), 'continent' => $continent);
+	public function index() {
+		$user_cart = $this->CartModel->select_item_from_cart($_SESSION['email']);
+		$data = array('user_cart' => $user_cart, 'actual_request' => bin2hex(random_bytes(16)));
 		$this->load->view('navbar', $data);
-		$this->load->view('getposter', $data);
+		$this->load->view('callumapal', $data);
 	}
 }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : sam. 17 déc. 2022 à 00:33
+-- Généré le : ven. 30 déc. 2022 à 21:35
 -- Version du serveur : 8.0.31-0ubuntu0.22.04.1
 -- Version de PHP : 8.1.2-1ubuntu2.9
 
@@ -24,16 +24,33 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Structure de la table `Kart`
+-- Structure de la table `Cart`
 --
 
-CREATE TABLE `Kart` (
+CREATE TABLE `Cart` (
   `id` smallint NOT NULL,
   `email_user` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `photo_id` int NOT NULL,
   `quantity` int NOT NULL,
   `size` varchar(100) NOT NULL,
   `price` float NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `Orders`
+--
+
+CREATE TABLE `Orders` (
+  `id` smallint NOT NULL,
+  `email_user` varchar(100) NOT NULL,
+  `order_id` varchar(100) NOT NULL,
+  `photo_id` int NOT NULL,
+  `price` float NOT NULL,
+  `size` varchar(100) NOT NULL,
+  `quantity` int NOT NULL,
+  `date` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
@@ -100,9 +117,15 @@ INSERT INTO `Users` (`first_name`, `last_name`, `email`, `password`, `id`) VALUE
 --
 
 --
--- Index pour la table `Kart`
+-- Index pour la table `Cart`
 --
-ALTER TABLE `Kart`
+ALTER TABLE `Cart`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `Orders`
+--
+ALTER TABLE `Orders`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -122,10 +145,16 @@ ALTER TABLE `Users`
 --
 
 --
--- AUTO_INCREMENT pour la table `Kart`
+-- AUTO_INCREMENT pour la table `Cart`
 --
-ALTER TABLE `Kart`
-  MODIFY `id` smallint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+ALTER TABLE `Cart`
+  MODIFY `id` smallint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+
+--
+-- AUTO_INCREMENT pour la table `Orders`
+--
+ALTER TABLE `Orders`
+  MODIFY `id` smallint NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT pour la table `Photos`

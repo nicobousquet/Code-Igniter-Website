@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<title><?php echo $photo[0]->continent;
+		echo ' #' . $photo[0]->id ?></title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<style>
 
@@ -151,7 +153,7 @@
 			<div style="margin-bottom: 50px">
 				<label for="size_form" class="font">Size (cm):</label>
 				<form id="size_form" name="size_form"
-					  action="<?php echo site_url('MyKart/add_to_kart/') . $photo[0]->continent . '/' . $photo[0]->id; ?>"
+					  action="<?php echo site_url('MyCart/add_to_cart/') . $photo[0]->id; ?>"
 					  method="post" style="display: flex; flex-direction: column">
 					<div>
 						<div class="button">
@@ -187,7 +189,7 @@
 					</div>
 					<br><br>
 					<div style="text-align: center" class="buy">
-						<button type="submit">Add to kart</button>
+						<button type="submit">Add to cart</button>
 						<div id="price" class="font"></div>
 					</div>
 				</form>

@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3.org/1999/html" , lang="en">
 <head>
 	<meta charset="UTF-8">
+	<title style="display: none">Home</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<style>
 		body {
@@ -29,6 +30,7 @@
 			z-index: -1;
 			width: 100%;
 			padding: 20px;
+			box-sizing: border-box;
 		}
 
 		li span1 {

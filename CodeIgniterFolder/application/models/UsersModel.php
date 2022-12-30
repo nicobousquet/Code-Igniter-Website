@@ -7,11 +7,11 @@ class UsersModel extends CI_Model
 
 	public function insert_new_user($first_name, $last_name, $email, $password)
 	{
-		$this->db->set('first_name', $first_name);
-		$this->db->set('last_name', $last_name);
-		$this->db->set('email', $email);
-		$this->db->set('password', $password);
-		return $this->db->insert($this->table);
+		return $this->db->set('first_name', $first_name)
+			->set('last_name', $last_name)
+			->set('email', $email)
+			->set('password', $password)
+			->insert($this->table);
 	}
 
 	public function select_user_by_email_and_password($email, $password)

@@ -1,11 +1,11 @@
 <?php
 if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class KartModel extends CI_Model
+class CartModel extends CI_Model
 {
-	protected string $table = 'Kart';
+	protected string $table = 'Cart';
 
-	public function insert_item_into_kart($email_user, $photo_id, $quantity, $size, $price)
+	public function insert_item_into_cart($email_user, $photo_id, $quantity, $size, $price)
 	{
 		return $this->db->set('email_user', $email_user)
 			->set('photo_id', $photo_id)
@@ -15,12 +15,12 @@ class KartModel extends CI_Model
 			->insert($this->table);
 	}
 
-	public function select_item_from_kart($email)
+	public function select_item_from_cart($email)
 	{
 		return $this->db->select('*')
 			->from($this->table)
 			->where('email_user', $email)
-			->join('Photos', 'Photos.id = Kart.photo_id')
+			->join('Photos', 'Photos.id = Cart.photo_id')
 			->get()
 			->result();
 	}
