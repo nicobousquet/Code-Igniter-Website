@@ -12,15 +12,19 @@ defined('BASEPATH') or exit('No direct script access allowed');
 |
 */
 
+// Pre-controller hook to set session variables
 $hook['post_controller'] = function () {
+	// Get the current instance of the CI_Controller class
 	$CI =& get_instance();
-	$CI->load->library('session');
 
+	// Set the 'login' session variable to false if it is not already set
 	if (!$CI->session->has_userdata('login')) {
 		$CI->session->set_userdata('login', false);
 	}
 
+	// Set the 'password' session variable to true if it is not already set
 	if (!$CI->session->has_userdata('password')) {
 		$CI->session->set_userdata('password', true);
 	}
 };
+
