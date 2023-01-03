@@ -13,7 +13,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 */
 
 // Pre-controller hook to set session variables
-$hook['post_controller'] = function () {
+$hook['post_controller_constructor'] = function () {
 	// Get the current instance of the CI_Controller class
 	$CI =& get_instance();
 
