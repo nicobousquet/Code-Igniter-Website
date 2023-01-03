@@ -25,10 +25,9 @@ class Navbar extends CI_Controller
 	public function disconnect_user()
 	{
 		// Unset the session variables for the user's name, email, and password
-		$this->session->unset_userdata('login');
+		$this->session->set_userdata('login', false);
 		$this->session->unset_userdata('email', $_POST['email']);
-		$this->session->unset_userdata('email', $_POST['email']);
-		$this->session->unset_userdata('password');
+		$this->session->set_userdata('password', true);
 		// Redirect the user to the previous page
 		redirect($_SERVER['HTTP_REFERER']);
 	}
