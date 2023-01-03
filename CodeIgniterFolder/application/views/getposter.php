@@ -55,7 +55,9 @@
 </head>
 <body>
 
-<?php $modulo = count($photos) % 3;
+<?php
+//iterate through the photos array in blocks of 3
+$modulo = count($photos) % 3;
 if (count($photos) >= 3) {
 	for ($i = 0; $i < intdiv(count($photos), 3); $i++) {
 		?>
@@ -83,6 +85,7 @@ if ($modulo != 0) {
 	?>
 	<div class="flex_container">
 		<ul class="photos">
+			<!-- Display remaining photos -->
 			<?php for ($i = 0; $i < $modulo; $i++) { ?>
 				<li>
 					<span1>

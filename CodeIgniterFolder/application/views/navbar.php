@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/html" lang="en">
 <head>
 	<meta charset="UTF-8">
-	<link rel="icon" href="<?=base_url()?>/favicon.ico" type="image/gif">
+	<link rel="icon" href="<?= base_url() ?>/favicon.ico" type="image/gif">
 	<style>
 		input[type=text], input[type=email], input[type=password], select {
 			padding: 6px 8px;
@@ -94,20 +94,32 @@
 </head>
 
 <body>
+
+<!-- The navigation bar at the top of the page -->
 <ul class="navbar">
+
+	<!-- Home page -->
 	<li><a href="<?php echo site_url('Home'); ?>"><span>Home</span></a></li>
+
+	<!-- Pages for each continent -->
 	<li><a href="<?php echo site_url('GetPoster/index/Europe'); ?>"><span>Europe</span></a></li>
 	<li><a href="<?php echo site_url('GetPoster/index/Asia'); ?>"><span>Asia</span></a></li>
 	<li><a href="<?php echo site_url('GetPoster/index/America'); ?>"><span>America</span></a></li>
 	<li><a href="<?php echo site_url('GetPoster/index/Africa'); ?>"><span>Africa</span></a></li>
 	<li><a href="<?php echo site_url('GetPoster/index/Oceania'); ?>"><span>Oceania</span></a></li>
+
+	<!-- Link to the user's cart -->
 	<li class="nav_right"><a href="<?php echo site_url('MyCart'); ?>"><span>My cart</span></a></li>
+
+	<!-- If the user is not logged in, show a login form -->
 	<?php if (!$_SESSION['login']) { ?>
 		<li class="showhim nav_right"><span>My account</span>
 			<div class="showme">
 				<div>
+					<!-- Form to login -->
 					<form method="post" action="<?php echo site_url('Navbar/login'); ?>">
 						<div>
+							<!-- Inputs for email and password -->
 							<input type="email" id="email_login" name="email_login" placeholder="Email" required><br>
 							<input type="password" id="password_login" name="password_login" placeholder="Password"
 								   required><br>
@@ -121,6 +133,7 @@
 								}
 								?>
 							</div>
+							<!-- This link allows the user to create an account if they don't already have one -->
 							<a href="<?php echo site_url('MyAccount'); ?>" style="font-size: small">No account ?</a>
 						</div>
 					</form>
@@ -128,11 +141,13 @@
 			</div>
 		</li>
 	<?php } else { ?>
+		<!-- If the user is logged in, their account menu is displayed with options to view their orders and log out -->
 		<li class="showhim nav_right"><span><?php echo $_SESSION['login']; ?></span>
 			<div class="showme">
 				<div>
 					<form method="post" action="<?php echo site_url('MyOrders'); ?>">
 						<div class="button_div" style="margin: 2px">
+							<!-- Display "My orders" button -->
 							<input type="submit" name="myorders" value="My orders">
 						</div>
 					</form>
@@ -140,7 +155,8 @@
 				<div>
 					<form method="post" action="<?php echo site_url('Navbar/disconnect_user'); ?>">
 						<div class="button_div" style="margin: 2px">
-							<input type="submit" name="disconnect" value="Disconnect">
+							<!-- Display "Log out" button -->
+							<input type="submit" name="disconnect" value="Log out" style="width: 113%">
 						</div>
 					</form>
 				</div>

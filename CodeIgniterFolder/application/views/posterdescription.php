@@ -114,17 +114,20 @@
 	</style>
 </head>
 <body>
-
 <div class="flex_container">
+	<!-- Display the selected photo -->
 	<div class="product">
 		<img src="<?php echo $photo[0]->url; ?>"
 			 alt="">
 	</div>
+	<!-- Display the description of the photo -->
 	<div class="product_info">
 		<div class="font product_description ">
 			# <?php echo $photo[0]->continent; ?>
 		</div>
+		<!-- Display the form for selecting the size of the poster and adding it to the cart -->
 		<div style="margin-bottom: 35px;">
+			<!-- Display the price based on the selected size -->
 			<script>
 				display_price = function () {
 					let size = $("input:radio[name ='radio_buttons']:checked").val();
@@ -152,33 +155,40 @@
 			</script>
 			<div style="margin-bottom: 50px">
 				<label for="size_form" class="font">Size (cm):</label>
+				<!-- Form for selecting size and quantity of poster -->
 				<form id="size_form" name="size_form"
-					  action="<?php echo site_url('MyCart/add_to_cart/') . $photo[0]->id; ?>"
-					  method="post" style="display: flex; flex-direction: column">
+					  action="<?php echo site_url('MyCart/add_to_cart/') . $photo[0]->id; ?>" method="post"
+					  style="display: flex; flex-direction: column">
+					<!-- Radio buttons for selecting size of poster -->
 					<div>
+						<!-- 40x50 cm size option -->
 						<div class="button">
-							<input type="radio" value="40x50" name="radio_buttons" onclick="display_price();"
-								   required>
+							<input type="radio" value="40x50" name="radio_buttons" onclick="display_price();" required>
 							<label class="btn btn-default">40 x 50</label>
 						</div>
+						<!-- 50x70 cm size option -->
 						<div class="button">
 							<input type="radio" value="50x70" name="radio_buttons" onclick="display_price();">
 							<label class="btn btn-default">50 x 70</label>
 						</div>
+						<!-- 60x90 cm size option -->
 						<div class="button">
 							<input type="radio" value="60x90" name="radio_buttons" onclick="display_price();">
 							<label class="btn btn-default">60 x 90</label>
 						</div>
+						<!-- 100x150 cm size option -->
 						<div class="button">
 							<input type="radio" value="100x150" name="radio_buttons" onclick="display_price();">
 							<label class="btn btn-default">100 x 150</label>
 						</div>
+						<!-- 120x180 cm size option -->
 						<div class="button" style="margin-bottom: 3px">
 							<input type="radio" value="120x180" name="radio_buttons" onclick="display_price();">
 							<label class="btn btn-default">120 x 180</label>
 						</div>
 					</div>
 					<div>
+						<!-- Dropdown menu for quantity selection -->
 						<label for="quantity" class="font">Quantity:</label>
 						<select id="quantity" onchange="display_price();" name="quantity" style="width: auto">
 							<option value="1">1</option>
@@ -188,6 +198,7 @@
 						</select>
 					</div>
 					<br><br>
+					<!-- Displays the current price of the poster based on the selected size and quantity. -->
 					<div style="text-align: center" class="buy">
 						<button type="submit">Add to cart</button>
 						<div id="price" class="font"></div>

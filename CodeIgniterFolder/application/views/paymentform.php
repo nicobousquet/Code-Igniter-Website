@@ -60,10 +60,9 @@
 		}
 
 		.form_box {
-			background-color: #f8f8f8;
+			background-color: rgba(239, 244, 197, 0.5);
 			align-self: center;
 			width: 500px;
-			border-radius: 0 0 10px 10px;
 			height: 100vh;
 			margin: 0;
 			position: absolute;

@@ -16,7 +16,11 @@ class PaymentForm extends CI_Controller
 		}
 	}
 	public function index() {
-		$this->load->view('navbar');
-		$this->load->view('paymentform.php');
+		if (isset($_SESSION['email'])) {
+			$this->load->view('navbar');
+			$this->load->view('paymentform.php');
+		} else {
+			redirect(site_url('MyAccount'));
+		}
 	}
 }

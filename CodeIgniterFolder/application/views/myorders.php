@@ -78,34 +78,52 @@
 </head>
 <body>
 
+<!-- The page displays a list of the user's orders -->
+<h1 class="font" style="margin: 30px"> My orders</h1>
+
 <?php
+
+// Iterate through the user's orders
 for ($i = 0; $i < count($user_orders); $i++) { ?>
-	<h1 style="color: #404040" class="font"><?php echo $user_orders[$i][0]->date . ' --> order #' . $user_orders[$i][0]->order_id?></h1>
-	<?php for ($j = 0; $j < count($user_orders[$i]) - 1; $j++) {
-		?>
+
+	<!-- Display the date and order number for the current order -->
+	<h2 style="color: #404040"
+		class="font"><?php echo $user_orders[$i][0]->date . ' --> order #' . $user_orders[$i][0]->order_id ?></h2>
+
+	<!-- Iterate through the items in the current order -->
+	<?php for ($j = 0; $j < count($user_orders[$i]) - 1; $j++) { ?>
+
+		<!-- Display information about the current item -->
 		<div class="flex_container font">
 			<div style="display: flex; flex-direction: row">
 				<div class="photos">
+					<!-- Link to the page for the current item -->
 					<a href="<?php echo site_url('PosterDescription/index/') . $user_orders[$i][$j]->photo_id; ?> "><img
 								src="<?php echo $user_orders[$i][$j]->url; ?>"
 								alt=""></a>
-
 				</div>
 				<div class="photos">
+					<!-- Display the continent and ID of the current item -->
 					<p style=""><?php echo $user_orders[$i][$j]->continent;
 						echo ' #' . $user_orders[$i][$j]->id; ?><br></p>
+					<!-- Display the quantity of the current item -->
 					<p style="">Quantity: <?php echo $user_orders[$i][$j]->quantity; ?><br></p>
+					<!-- Display the size of the current item -->
 					<p style="">Size (cm): <?php echo $user_orders[$i][$j]->size; ?><br></p>
 				</div>
 				<div class="photos">
-					<p style="">Price: <?php echo $user_orders[$i][$j]->price; ?><br></p>
+					<!-- Display the price of the current item -->
+					<p style="">Price: <?php echo $user_orders[$i][$j]->price . '$'; ?><br></p>
 				</div>
 			</div>
 		</div>
 	<?php } ?>
+
+	<!-- Display the total price of the current order -->
 	<div class="photos" style="text-align: center">
-		<p class="font">Total price: <?php echo $user_orders[$i]['order_price']; ?></p>
+		<p class="font">Total price: <?php echo $user_orders[$i]['order_price'] . '$'; ?></p>
 	</div>
 <?php } ?>
-</body>
+``
+
 </html>

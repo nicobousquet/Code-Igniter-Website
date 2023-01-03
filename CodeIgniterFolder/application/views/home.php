@@ -70,29 +70,40 @@
 	</style>
 </head>
 <body>
-
+<!-- This is the main container for the page. It is a flexbox container with a column layout, and it is positioned in the center of the page -->
 <div class="flex_container">
+	<!-- Title of the page -->
 	<title>Get the poster of your dreams on this website</title>
+	<!-- List of steps to purchase a poster, displayed in a row using flexbox -->
 	<ul class="steps">
+		<!-- Step 1: find the photo you like the most -->
 		<li>
+			<!-- Container for the step text -->
 			<span1>Find the photo you like the most</span1>
 		</li>
+		<!-- Arrow between steps -->
 		<li style="margin-top: 20px">
+			<!-- Arrow icon -->
 			<span2>&#62;</span2>
 		</li>
+		<!-- Step 2: select the size of the poster you want -->
 		<li>
+			<!-- Container for the step text -->
 			<span1>Select the size of the poster you want</span1>
 		</li>
+		<!-- Arrow between steps -->
 		<li style="margin-top: 20px">
+			<!-- Arrow icon -->
 			<span2>&#62;</span2>
 		</li>
+		<!-- Step 3: order it -->
 		<li>
+			<!-- Container for the step text -->
 			<span1>
 				<div style="margin-top: 75px; transform: translateY(-50%)">Order it</div>
 			</span1>
 		</li>
 	</ul>
 </div>
-
 </body>
 </html>

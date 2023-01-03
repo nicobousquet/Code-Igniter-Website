@@ -1,4 +1,6 @@
-<!DOCTYPE hmtl>
+<!-- This file displays a message and operation code when a payment is canceled.
+The user is redirected to their orders page after 3 seconds. -->
+<!DOCTYPE html>
 <html>
 <head>
 </head>

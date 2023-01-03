@@ -84,20 +84,26 @@
 </head>
 
 <body>
+<!-- This file allows the user to create a new account -->
+
+<!-- The form is used to collect user information and create a new account -->
 <script>
+	<!-- The JavaScript function match_password() is called when the user types in the password or confirm password fields -->
 	var match_password = function () {
 		if (document.getElementById('password').value == document.getElementById('confirm').value) {
+			// Check if the password and confirm password fields match
 			document.getElementById('message').style.color = 'green';
 			document.getElementById('message').innerHTML = 'matching';
 			document.getElementById('submit').disabled = false;
 		} else {
+			// If the fields do not match, display a message and disable the submit button
 			document.getElementById('message').style.color = 'red';
 			document.getElementById('message').innerHTML = 'not matching';
 			document.getElementById('submit').disabled = true;
 		}
 	}
 </script>
-
+<!-- The form fields collect the user's first and last name, email, and password -->
 <div class="form_box">
 	<form method="post" class="font form" action="<?php echo site_url('MyAccount/add_new_user'); ?>">
 		<div class="title">
@@ -116,10 +122,13 @@
 				   pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8, 16}" required><br>
 			<input type="password" id="confirm" name="confirm" placeholder="Confirm password"
 				   onkeyup='match_password();' pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8, 16}" required><br>
+			<!-- The message span displays a message indicating whether the password and confirm password fields match -->
 			<span id='message'></span>
 		</div>
 		<div style="display: flex; flex-direction: column; color: red">
+			<!-- The submit button is disabled if the password and confirm password fields do not match -->
 			<input id="submit" type="submit" value="Submit">
+			<!-- If the email is already being used by another user, display an error message -->
 			<?php if (isset($email_used) && $email_used) {
 				echo "Email used by another user";
 			} ?>
