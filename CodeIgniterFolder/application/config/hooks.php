@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 /*
 | -------------------------------------------------------------------------
@@ -12,12 +12,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 
-$hook['pre_system'] = function() {
-	if ( ! isset($_SESSION['login'])) {
-		$_SESSION['login'] = false;
+$hook['post_controller'] = function () {
+	$CI =& get_instance();
+	$CI->load->library('session');
+
+	if (!$CI->session->has_userdata('login')) {
+		$CI->session->set_userdata('login', false);
 	}
 
-	if ( ! isset($_SESSION['password'])) {
-		$_SESSION['password'] = true;
+	if (!$CI->session->has_userdata('password')) {
+		$CI->session->set_userdata('password', true);
 	}
 };
