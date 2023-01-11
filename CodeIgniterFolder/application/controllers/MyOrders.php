@@ -9,6 +9,7 @@ class MyOrders extends CI_Controller
 		if (isset($_SESSION['email'])) {
 			// get all orders for the logged in user
 			$user_orders_tmp = $this->OrdersModel->select_orders($_SESSION['email']);
+			$data = array();
 			// check if user has any orders
 			if (count($user_orders_tmp)) {
 				// create array to store orders with product details
@@ -27,13 +28,12 @@ class MyOrders extends CI_Controller
 				}
 				// add total price for final order
 				$user_orders[$i]['order_price'] = $this->get_order_total_price($user_orders[$i]);
-				$data = array('user_orders' => $user_orders);
-				$this->load->view('navbar', $data);
+				$data['user_orders'] = $user_orders;
 			} else {
 				// set empty array if user has no orders
 				$data['user_orders'] = array();
-				$this->load->view('navbar');
 			}
+			$this->load->view('navbar');
 			$this->load->view('myorders', $data);
 		} else {
 			redirect(site_url('MyAccount'));

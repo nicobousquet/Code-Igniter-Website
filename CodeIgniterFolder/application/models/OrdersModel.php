@@ -43,7 +43,7 @@ class OrdersModel extends CI_Model
 			->from($this->table)
 			->where('email_user', $email_user)
 			->join('Photos', 'Photos.id = Orders.photo_id')
-			->order_by('date', 'ASC', 'order_id')
+			->order_by('date', 'DESC', 'order_id')
 			->get()
 			->result();
 	}
