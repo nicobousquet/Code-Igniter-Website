@@ -72,14 +72,6 @@
 			margin-top: 20px;
 			font-weight: normal;
 		}
-
-		/*
-				div {
-					border-radius: 5px;
-					background-color: #f2f2f2;
-					padding: 20px;
-				}
-		 */
 	</style>
 </head>
 

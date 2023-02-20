@@ -10,14 +10,8 @@
 			background-color: #f8f8f8;
 		}
 
-		p {
-			font-family: "Google Sans", Roboto, Arial, sans-serif;
-			font-weight: 600;
-			color: #3C4043;
-			margin: 0;
-		}
-
 		.flex_container {
+			height: 50%;
 			display: flex;
 			flex-direction: column;
 			overflow: hidden;
@@ -30,29 +24,35 @@
 			z-index: -1;
 			width: 100%;
 			padding: 20px;
-			box-sizing: border-box;
 		}
 
-		li span1 {
+		.box {
 			background-color: #F3D2C5;
 			padding: 10px;
 			margin: 10px;
 			border-radius: 30px;
-			display: block;
 			width: 150px;
 			height: 150px;
 			font-size: 32px;
+			display: grid;
+			place-items: center;
 		}
 
-		ul.steps {
-			list-style-type: none;
+		.arrow {
+			width: 50px;
+			font-size: 32px;
+			display: grid;
+			place-items: center;
+		}
+
+		.steps {
+			justify-content: center;
 			text-align: center;
 			font-size: 20px;
-			display: inline;
 			display: flex;
 			flex-direction: row;
-			align-self: center;
 			padding: 0;
+			margin-top: 20px;
 		}
 
 		title {
@@ -61,49 +61,35 @@
 			font-size: 32px;
 			text-align: center;
 		}
-
-		li span2 {
-			font-size: 130px;
-			margin-left: 10px;
-			margin-right: 10px;
-		}
 	</style>
 </head>
 <body>
 <!-- This is the main container for the page. It is a flexbox container with a column layout, and it is positioned in the center of the page -->
 <div class="flex_container">
-	<!-- Title of the page -->
 	<title>Get the poster of your dreams on this website</title>
 	<!-- List of steps to purchase a poster, displayed in a row using flexbox -->
-	<ul class="steps">
+	<div class="steps">
 		<!-- Step 1: find the photo you like the most -->
-		<li>
-			<!-- Container for the step text -->
-			<span1>Find the photo you like the most</span1>
-		</li>
+		<div class="box">
+			Find the photo you like the most
+		</div>
 		<!-- Arrow between steps -->
-		<li style="margin-top: 20px">
-			<!-- Arrow icon -->
-			<span2>&#62;</span2>
-		</li>
+		<div class="arrow">
+			&#62;
+		</div>
 		<!-- Step 2: select the size of the poster you want -->
-		<li>
-			<!-- Container for the step text -->
-			<span1>Select the size of the poster you want</span1>
-		</li>
+		<div class="box">
+			Select the size of the poster you want
+		</div>
 		<!-- Arrow between steps -->
-		<li style="margin-top: 20px">
-			<!-- Arrow icon -->
-			<span2>&#62;</span2>
-		</li>
+		<div class="arrow">
+			&#62;
+		</div>
 		<!-- Step 3: order it -->
-		<li>
-			<!-- Container for the step text -->
-			<span1>
-				<div style="margin-top: 75px; transform: translateY(-50%)">Order it</div>
-			</span1>
-		</li>
-	</ul>
+		<div class="box">
+			Order it
+		</div>
+	</div>
 </div>
 </body>
 </html>

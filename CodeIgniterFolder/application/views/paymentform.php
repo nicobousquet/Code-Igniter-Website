@@ -35,27 +35,9 @@
 			color: #b0b0b4;
 		}
 
-		.form {
-			text-align: center;
-			margin: 50px;
-		}
-
-		.title {
-			height: 100px;
-			width: 100%;
-			font-size: 32px;
-			margin-top: 75px;
-		}
-
 		.line {
 			display: flex;
 			flex-direction: row;
-			justify-content: center;
-		}
-
-		.column {
-			display: flex;
-			flex-direction: column;
 			justify-content: center;
 		}
 
@@ -65,49 +47,30 @@
 			width: 500px;
 			height: 100vh;
 			margin: 0;
-			position: absolute;
-			top: 50%;
-			-ms-transform: translateY(-50%);
-			transform: translateY(-50%);;
-			z-index: -1;
+			display: flex;
+			align-items: center;
 		}
-
-		#message {
-			font-size: small;
-			margin-top: 20px;
-			font-weight: normal;
-		}
-
-		/*
-				div {
-					border-radius: 5px;
-					background-color: #f2f2f2;
-					padding: 20px;
-				}
-		 */
 	</style>
 </head>
 
 <body>
 <div class="form_box">
-	<form method="post" class="font form" action="<?php echo site_url('CallUMAPal'); ?>">
-		<div class="title">
+	<form method="post" class="font" action="<?= site_url('CallUMAPal'); ?>">
+		<div class="font" style="text-align: center; font-size: 20px">
 			Add your shipment address
 		</div>
 		<div class="line">
 			<input type="text" id="fname" name="fname" placeholder="First name" pattern="[A-Za-z]+" required><br>
 			<input type="text" id="lname" name="lname" placeholder="Last name" pattern="[A-Za-z]+" required><br>
 		</div>
-		<div class="column">
 			<input style="width: 95%;" type="text" name="address" placeholder="Address" required>
 			<input style="width: 95%;" type="text" name="appartment" placeholder="Appartment" required>
-		</div>
 		<div class="line">
 			<input type="number" name="postal_code" placeholder="Postal code" required>
 			<input type="text" name="city" placeholder="City" required>
 			<input type="text" name="country" placeholder="Country" required>
 		</div>
-		<div>
+		<div style="text-align: center">
 			<input id="submit" type="submit" value="Submit">
 		</div>
 	</form>
