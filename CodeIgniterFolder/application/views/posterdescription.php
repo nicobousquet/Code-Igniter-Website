@@ -5,110 +5,7 @@
 	<title><?= $photo[0]->continent;
 		echo ' #' . $photo[0]->id ?></title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-	<style>
-
-		div.flex_container {
-			display: flex;
-			flex-direction: row;
-		}
-
-		div.photo_div {
-			width: 50%;
-			align-self: center;
-			display: flex;
-			justify-content: center;
-			margin: 2px;
-			padding: 10px;
-		}
-
-		div.product_info {
-			display: flex;
-			flex-direction: column;
-			background-color: #f8f8f8;
-			width: 50%;
-			height: 430px;
-			padding: 40px;
-		}
-
-		button, .button {
-			background-color: #abac87;
-			padding: 8px 20px;
-			border-radius: 4px;
-			font-size: 16px;
-			line-height: 24px;
-			font-weight: 600;
-			font-family: "Google Sans Display";
-			border: 0;
-			color: #FFFFFF;
-			text-align: center;
-			margin: 2px;
-		}
-
-		button:hover {
-			background-color: rgb(25 24 24 / 16%)
-		}
-
-		.title {
-			height: 100px;
-			font-size: 32px;
-			margin-top: 75px;
-		}
-
-		img {
-			max-height: 100%;
-			max-width: 100%;
-		}
-
-		.button label,
-		.button input {
-			display: block;
-			position: absolute;
-			top: 0;
-			bottom: 0;
-			left: 0;
-			right: 0;
-			text-align: center;
-		}
-
-		.button input[type="radio"] {
-			opacity: 0.011;
-			z-index: 100;
-			width: 90%;
-			height: 90%;
-		}
-
-		.button input[type="radio"]:not(:checked) + label {
-			background-color: #e9d8d8;
-			border-radius: 4px;
-		}
-
-		.button input[type="radio"]:checked + label {
-			background: #20b8be;
-			border-radius: 4px;
-		}
-
-		.button label {
-			cursor: pointer;
-			z-index: 90;
-			line-height: 1.8em;
-		}
-
-		.font {
-			font-family: "Google Sans", Roboto, Arial, sans-serif;
-			font-weight: 600;
-			color: #b0b0b4;
-		}
-
-		.size_container {
-			margin-bottom: 10px;
-		}
-
-		#quantity {
-			display: flex;
-			flex-direction: column;
-		}
-	</style>
-
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url("css/posterdescription.css");?>">
 	<!-- Display the price based on the selected size -->
 	<script>
 		display_price = function () {
@@ -133,7 +30,7 @@
 					break;
 			}
 
-			if (price != 0) {
+			if (price !== 0) {
 				document.getElementById('price').innerHTML = (parseInt(document.getElementById('quantity').value) * price).toFixed(2) + '$';
 			}
 		}
@@ -143,7 +40,7 @@
 <div class="flex_container">
 	<!-- Display the selected photo -->
 	<div class="photo_div">
-		<img src="<?= $photo[0]->url; ?>">
+		<img src="<?= $photo[0]->url; ?>" alt="">
 	</div>
 	<!-- Display the description of the photo -->
 	<div class="product_info">

@@ -1,35 +1,10 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/html" , lang="en">
+<html xmlns="http://www.w3.org/1999/html" lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title><?= $continent ?></title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-	<style>
-		.flex_container {
-			display: flex;
-			flex-direction: row;
-			overflow: hidden;
-			background-color: #f8f8f8;
-			margin: 1px;
-			justify-content: center;
-		}
-
-		img {
-			transition: transform 0.8s;
-			margin: 20px;
-			width: auto;
-			height: 180px;
-		}
-
-		img:hover {
-			transform: scale(1.08);
-		}
-
-		body {
-			display: flex;
-			flex-direction: column;
-		}
-	</style>
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url("css/getposter.css");?>">
 </head>
 <body>
 

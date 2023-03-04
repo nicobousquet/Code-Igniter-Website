@@ -1,8 +1,9 @@
 <!-- This page is displayed after a successful payment and shows the operation code of the payment.
 It also automatically redirects the user to the 'MyOrders' page after 3 seconds. -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+	<title>Payment success</title>
 </head>
 <body>
 <h1>Payment completed</h1>

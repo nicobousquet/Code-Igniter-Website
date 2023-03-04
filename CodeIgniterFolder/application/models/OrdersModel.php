@@ -4,6 +4,13 @@ if (!defined('BASEPATH')) exit('No direct script access allowed');
 class OrdersModel extends CI_Model
 {
 	protected string $table = 'Orders';
+	protected string $email_user = 'email_user';
+	protected string $photo_id = 'photo_id';
+	protected string $quantity = 'quantity';
+	protected string $size = 'size';
+	protected string $price = 'price';
+	protected string $date = 'date';
+	protected string $order_id = 'order_id';
 
 	/**
 	 * Inserts a new order into the `Orders` table
@@ -18,15 +25,15 @@ class OrdersModel extends CI_Model
 	 *
 	 * @return bool Whether the insertion was successful or not
 	 */
-	public function insert_order($email_user, $order_id, $photo_id, $price, $size, $quantity, $date)
+	public function insert_order(string $email_user, string $order_id, int $photo_id, float $price, string $size, int $quantity, string $date): bool
 	{
 		return $this->db->set('email_user', $email_user)
-			->set('order_id', $order_id)
-			->set('photo_id', $photo_id)
-			->set('quantity', $quantity)
-			->set('size', $size)
-			->set('price', $price)
-			->set('date', $date)
+			->set($this->order_id, $order_id)
+			->set($this->photo_id, $photo_id)
+			->set($this->quantity, $quantity)
+			->set($this->size, $size)
+			->set($this->price, $price)
+			->set($this->date, $date)
 			->insert($this->table);
 	}
 
@@ -37,13 +44,15 @@ class OrdersModel extends CI_Model
 	 *
 	 * @return array An array of objects representing the orders made by the user
 	 */
-	public function select_orders($email_user)
+	public function select_orders(string $email_user): array
 	{
 		return $this->db->select('*')
 			->from($this->table)
-			->where('email_user', $email_user)
+			->where($this->email_user, $email_user)
 			->join('Photos', 'Photos.id = Orders.photo_id')
-			->order_by('date', 'DESC', 'order_id')
+			->select("STR_TO_DATE($this->date, '%d %b, %Y') AS date_converted", FALSE)
+			->order_by('date_converted', 'DESC')
+			->order_by($this->order_id)
 			->get()
 			->result();
 	}

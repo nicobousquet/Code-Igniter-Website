@@ -13,7 +13,7 @@ class MyAccount extends CI_Controller
 	}
 
 	// Method that checks if the provided email is already in use by another user
-	public function email_used($email)
+	public function email_used(): bool
 	{
 		// Retrieve user data from the UsersModel based on the provided email
 		$user = $this->UsersModel->select_user_by_email($_POST['email']);
@@ -29,7 +29,7 @@ class MyAccount extends CI_Controller
 	public function add_new_user()
 	{
 		// If the provided email is not already in use, insert the new user into the database and set the login session variable
-		if (!$this->email_used($_POST['email'])) {
+		if (!$this->email_used()) {
 			$this->UsersModel->insert_new_user($_POST['fname'], $_POST['lname'], $_POST['email'], $_POST['password']);
 			$this->session->set_userdata('login', $_POST['fname']);
 			$this->session->set_userdata('email', $_POST['email']);

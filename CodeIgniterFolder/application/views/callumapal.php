@@ -1,4 +1,4 @@
-<html>
+<html lang="en">
 <head>
 	<title>Connecting to UMAPal</title>
 </head>

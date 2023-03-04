@@ -1,41 +1,10 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/html" , lang="en">
+<html xmlns="http://www.w3.org/1999/html" lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>My orders</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-	<style>
-		.flex_container {
-			border-radius: 0px;
-			display: flex;
-			flex-direction: row;
-			overflow: hidden;
-			background-color: #f8f8f8;
-			margin: 1px;
-		}
-
-		img {
-			width: auto;
-			height: 200px;
-		}
-
-		.font {
-			font-family: "Google Sans", Roboto, Arial, sans-serif;
-			font-weight: 600;
-			color: #b0b0b4;
-		}
-
-		.infos {
-			width: 100%;
-			margin-left: 50px;
-			font-size: 20px;
-		}
-
-		.total_price {
-			font-size: 20px;
-			text-align: center;
-		}
-	</style>
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url("css/myorders.css");?>">
 </head>
 <body>
 
