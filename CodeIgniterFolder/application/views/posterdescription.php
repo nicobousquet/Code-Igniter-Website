@@ -87,7 +87,7 @@
 			<br><br>
 			<!-- Displays the current price of the poster based on the selected size and quantity. -->
 			<div style="text-align: center" class="buy">
-				<button type="submit">Add to cart</button>
+				<button type="submit" style="font-size: 16px">Add to cart</button>
 				<div id="price" class="font"></div>
 			</div>
 		</form>

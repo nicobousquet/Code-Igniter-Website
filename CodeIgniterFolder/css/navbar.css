@@ -18,6 +18,10 @@ input[type=submit], button {
 	cursor: pointer;
 }
 
+button:hover {
+	background-color: rgb(25 24 24 / 16%)
+}
+
 input:enabled[type=submit]:hover {
 	background-color: rgb(25 24 24 / 16%)
 }

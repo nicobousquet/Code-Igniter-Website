@@ -21,24 +21,6 @@ div.product_info {
 	padding: 40px;
 }
 
-button, .button {
-	background-color: #abac87;
-	padding: 8px 20px;
-	border-radius: 4px;
-	font-size: 16px;
-	line-height: 24px;
-	font-weight: 600;
-	font-family: "Google Sans Display";
-	border: 0;
-	color: #FFFFFF;
-	text-align: center;
-	margin: 2px;
-}
-
-button:hover {
-	background-color: rgb(25 24 24 / 16%)
-}
-
 .title {
 	height: 100px;
 	font-size: 32px;
