@@ -4,7 +4,7 @@ if (!defined('BASEPATH')) exit('No direct script access allowed');
 class CartModel extends CI_Model
 {
 	// The name of the table in the database this model is for
-	protected string $table = 'Cart';
+	protected string $table = 'cart';
 	protected string $email_user = 'email_user';
 	protected string $photo_id = 'photo_id';
 	protected string $quantity = 'quantity';
@@ -44,7 +44,7 @@ class CartModel extends CI_Model
 		return $this->db->select('*')
 			->from($this->table)
 			->where($this->email_user, $email)
-			->join('Photos', 'Photos.id = Cart.photo_id')
+			->join('photos', 'photos.id = cart.photo_id')
 			->get()
 			->result();
 	}

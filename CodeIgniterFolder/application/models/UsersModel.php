@@ -3,7 +3,7 @@ if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 class UsersModel extends CI_Model
 {
-	protected string $table = 'Users';
+	protected string $table = 'users';
 	protected string $first_name = 'first_name';
 	protected string $last_name = 'last_name';
 	protected string $email = 'email';

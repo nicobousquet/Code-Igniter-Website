@@ -1,3 +1,3 @@
 # Code-Igniter-Website
 Website for selling photos/posters
-base url: 'http://localhost:8080/Code-Igniter-Website/CodeIgniterFolder'
+base url: 'http://localhost/Full-E-Commerce-Website-For-Selling-Photos/CodeIgniterFolder/'

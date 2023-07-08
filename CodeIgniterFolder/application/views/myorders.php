@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>My orders</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url("css/myorders.css");?>">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/css/myorders.css");?>">
 </head>
 <body>
 
@@ -23,7 +23,7 @@ for ($i = 0; $i < count($user_orders); $i++) { ?>
 		<div class="flex_container font">
 			<!-- Link to the page for the current item -->
 			<a href="<?= site_url('PosterDescription/index/') . $user_orders[$i][$j]->photo_id; ?> ">
-				<img src="<?= $user_orders[$i][$j]->url; ?>" alt="">
+				<img src="<?= base_url($user_orders[$i][$j]->filepath); ?>" alt="">
 			</a>
 			<div class="infos">
 				<!-- Display the continent and ID of the current item -->

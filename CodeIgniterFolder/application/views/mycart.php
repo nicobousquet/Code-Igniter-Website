@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>My cart</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url("css/mycart.css");?>">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/css/mycart.css");?>">
 </head>
 <body>
 
@@ -18,7 +18,7 @@
 		<!-- Link to the page displaying the item's description -->
 		<a href="<?= site_url('PosterDescription/index/') . $user_cart[$i]->id; ?> ">
 			<!-- Display the item's image -->
-			<img src="<?= $user_cart[$i]->url; ?>" alt="">
+			<img src="<?= base_url($user_cart[$i]->filepath); ?>" alt="">
 		</a>
 		<div class="infos">
 			<!-- Display the item's continent and ID -->

@@ -8,7 +8,7 @@ class MyCart extends CI_Controller
 	{
 		// If the email session variable is set, retrieve and display the user's cart data
 		if (isset($_SESSION['email'])) {
-			$user_cart = $this->get_user_cart();
+			$user_cart = $this->CartModel->select_item_from_cart($_SESSION['email']);
 			$cart_total_price = $this->get_cart_total_price($user_cart);
 			$data = array('user_cart' => $user_cart, 'cart_total_price' => $cart_total_price);
 			$this->load->view('navbar');
@@ -68,12 +68,6 @@ class MyCart extends CI_Controller
 		// Remove all items from the cart and redirect to the MyCart controller
 		$this->CartModel->delete_all();
 		redirect(site_url('MyCart'));
-	}
-
-	// Method that retrieves the user's cart data from the database
-	public function get_user_cart()
-	{
-		return $this->CartModel->select_item_from_cart($_SESSION['email']);
 	}
 
 	// Method that calculates the total price of all items in the user's cart

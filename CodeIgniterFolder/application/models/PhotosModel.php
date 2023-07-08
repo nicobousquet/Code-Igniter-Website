@@ -3,7 +3,7 @@ if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 class PhotosModel extends CI_Model
 {
-	protected string $table = 'Photos';
+	protected string $table = 'photos';
 	protected string $continent = 'continent';
 	protected string $id = 'id';
 

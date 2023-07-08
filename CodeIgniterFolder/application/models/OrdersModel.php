@@ -3,7 +3,7 @@ if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 class OrdersModel extends CI_Model
 {
-	protected string $table = 'Orders';
+	protected string $table = 'orders';
 	protected string $email_user = 'email_user';
 	protected string $photo_id = 'photo_id';
 	protected string $quantity = 'quantity';
@@ -49,7 +49,7 @@ class OrdersModel extends CI_Model
 		return $this->db->select('*')
 			->from($this->table)
 			->where($this->email_user, $email_user)
-			->join('Photos', 'Photos.id = Orders.photo_id')
+			->join('photos', 'photos.id = orders.photo_id')
 			->select("STR_TO_DATE($this->date, '%d %b, %Y') AS date_converted", FALSE)
 			->order_by('date_converted', 'DESC')
 			->order_by($this->order_id)

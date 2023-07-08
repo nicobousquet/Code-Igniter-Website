@@ -2,8 +2,8 @@
 <html xmlns="http://www.w3.org/1999/html" lang="en">
 <head>
 	<meta charset="UTF-8">
-	<link rel="icon" href="<?= base_url("favicon.ico") ?>" type="image/gif">
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url("css/navbar.css");?>">
+	<link rel="icon" href="<?= base_url("assets/favicon.ico") ?>" type="image/gif">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/css/navbar.css");?>">
 </head>
 
 <body>

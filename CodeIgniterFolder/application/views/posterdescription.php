@@ -5,7 +5,7 @@
 	<title><?= $photo[0]->continent;
 		echo ' #' . $photo[0]->id ?></title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url("css/posterdescription.css");?>">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/css/posterdescription.css");?>">
 	<!-- Display the price based on the selected size -->
 	<script>
 		display_price = function () {
@@ -40,7 +40,7 @@
 <div class="flex_container">
 	<!-- Display the selected photo -->
 	<div class="photo_div">
-		<img src="<?= $photo[0]->url; ?>" alt="">
+		<img src="<?= base_url($photo[0]->filepath); ?>" alt="">
 	</div>
 	<!-- Display the description of the photo -->
 	<div class="product_info">
